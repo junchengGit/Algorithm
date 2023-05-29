@@ -1,13 +1,18 @@
 import ford_fullkerson
 
-connections = [(0, 1, 3000), (1, 2, 2000), (1, 3, 1000),
-(0, 3, 2000), (3, 4, 2000), (3, 2, 1000), (2,5,5000), (4,5, 5000)]
+graph = [[0, 16, 13, 0, 0, 0],
+        [0, 0, 10, 12, 0, 0],
+        [0, 4, 0, 0, 14, 0],
+        [0, 0, 9, 0, 0, 20],
+        [0, 0, 0, 7, 0, 4],
+        [0, 0, 0, 0, 0, 0]]
 source = 0
 sink = 5
 
-print(ford_fullkerson.maxflow_bfs(source,sink,connections))
-print(ford_fullkerson.maxflow_dfs(source,sink,connections))
+#print(ford_fullkerson.maxflow_bfs(source,sink,graph))
+print(ford_fullkerson.maxflow_dfs(source,sink,graph))
 # Correct Work:
-# >>> maxThroughput(connections, maxIn, maxOut, origin, targets)
-#4500
-
+# >>> ford_fullkerson.maxflow_bfs(source,sink,graph)
+# 23
+# >>> ford_fullkerson.maxflow_dfs(source,sink,graph)
+# 23
